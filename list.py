@@ -25,7 +25,7 @@ while True :
         start+=1
         driver.close()
 
-    
+#하하하
 # print(soup.get_text())
 # for i in text :
 #     print(i)
