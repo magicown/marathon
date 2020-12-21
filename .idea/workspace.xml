@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="da2b8cce-cc37-4be7-a0ae-b719c8efbe32" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/list.py" beforeDir="false" afterPath="$PROJECT_DIR$/list.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +38,7 @@
       <workItem from="1608514593594" duration="736000" />
       <workItem from="1608515885586" duration="1000" />
       <workItem from="1608529487226" duration="765000" />
-      <workItem from="1608530261501" duration="1866000" />
+      <workItem from="1608530261501" duration="2588000" />
     </task>
     <task id="LOCAL-00001" summary="list.py 주석이 달려있던 원본을 업로드 합니다.">
       <created>1608514698216</created>
@@ -71,13 +70,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="577" y="86" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1608529643350" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1608534654932">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608534654932" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1608530251651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1608530251651" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1608529660822">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1608534755715">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608529660822" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608534755715" />
   </component>
 </project>
