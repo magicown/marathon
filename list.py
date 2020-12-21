@@ -5,67 +5,37 @@ import re
 from bs4 import BeautifulSoup
 import pyautogui
 from selenium.webdriver.common.keys import Keys
+import json
+
+# 리그명을 가져온다.
+def get_league_name(soup) :
+    text = soup.find_all('h2')
+    for i in text :
+        t = i.get_text() # h2로 가져온 리그 타이틀을 변수에 저장한다.
+        league_name_list.append(t.replace(".","")) # 리그명중에 "."을 없앤다.
+        if t.find('결과') == 0 : #html 소스중에 결과라는 텍스트가 있으면 while문의 빠져 나간다.
+            return False            
 
 #여기서 부터 시작 입니다.
 start = 0
-while True :
+league_name_list = []
+result_chk = True
+while result_chk == True :
     URL = "https://www.marathonbet.com/ko/betting/?page="+str(start)+"&pageAction=getPage"
     driver = webdriver.Chrome(executable_path='chromedriver')
     driver.get(url=URL)
     html_doc = driver.page_source
     soup = BeautifulSoup(html_doc, 'html.parser')
-    # text = driver.find_element_by_class_name('category-label')
-    text = soup.find_all('h2')
-    for i in text :
-        print(i.get_text())
-        t = i.get_text()
-        t1 = t.find('결과')
-        if t1 == 0 :
-            break
-        start+=1
-        driver.close()
+    make_json = soup.get_text()
+    json_data = json.loads(make_json)    
+    if json_data[1]['val'] == False :
+        break
+    else :
+        res = get_league_name(soup)       
+        if res == False :
+            result_chk = False # while문의 빠져 나간다.
 
+    start+=1        
 
-# print(soup.get_text())
-# for i in text :
-#     print(i)
-    
-
-
-
-
-# text = ""
-# for i in range(1,25) :    
-#     pyautogui.click()
-#     URL = "https://www.marathonbet.com/ko/betting/Football"
-#     driver = webdriver.Chrome(executable_path='chromedriver')
-#     driver.get(url=URL)
-#     html_doc = driver.page_source
-#     soup = BeautifulSoup(html_doc, 'html.parser')
-#     text = soup.get_text()
-#     print(text)
-#     time.sleep(2)
-
-# while True:
-#     # Scroll down to bottom
-#     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-#     # Wait to load page
-#     time.sleep(SCROLL_PAUSE_TIME)
-#     # Calculate new scroll height and compare with last scroll height
-#     new_height = driver.execute_script("return document.body.scrollHeight")
-#     print(new_height)
-#     if new_height == last_height:        
-#         break
-#     last_height = new_height
-
-
-
-
-
-
-# league_name = soup.find_all(class_='category-container')
-# l_name = soup.select('h2')
-# print(l_name)
-# for i in l_name :
-#     print(i.get_text())
-# driver.close()
+print(league_name_list)
+driver.close()
